@@ -1,0 +1,137 @@
+.small {
+    min-width: 8px;
+    height: 8px;
+    stroke-width: 1;
+}
+
+.small span {
+    display: none; /* hide text content */
+}
+
+.medium {
+    min-width: 12px;
+    height: 12px;
+    stroke-width: 2;
+}
+
+.medium span {
+    display: none; /* hide text content */
+}
+
+
+.big {
+    width: 16px;  /* changed from min-width to width */
+    height: 16px;
+    stroke-width: 2;
+}
+
+.big span {
+    display: flex;
+    font-weight: 1;
+    font-size: 8px;
+}
+
+.large {
+    width: 20px;  /* changed from min-width to width */
+    height: 20px;
+    stroke-width: 2;
+}
+
+.large span {
+    display: flex;
+    font-weight: 1;
+    font-size: 10px;
+}
+
+.veryLarge {
+    width: 24px;  /* changed from min-width to width */
+    height: 24px;
+    stroke-width: 3;
+}
+
+.veryLarge span {
+    display: flex;
+    font-weight: 1;
+    font-size: 12px;
+}
+
+
+
+.primary{
+    background-color: rgba(47, 182, 117, 1);
+}
+
+.secondary{
+    background-color: rgba(131, 102, 86, 0.12);
+}
+
+
+
+.conteiner {
+    border-radius: 999px;
+    position: relative;
+    display: inline-flex;  /* changed from inline-block */
+}
+
+.counter {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999px;
+    position: relative;
+    z-index: 2;
+    aspect-ratio: 1;  /* added to maintain circle shape */
+    padding: 0;  /* ensure no padding affects the shape */
+    min-width: fit-content;  /* changed from 100% */
+    white-space: nowrap;
+}
+
+
+.red-dot {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.pulse.one {
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    animation: pulse-scale-fade 2s infinite;
+}
+
+.pulse.two {
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    animation: pulse-scale-fade 2s infinite;
+    animation-delay: 0.25s;
+}
+
+@keyframes pulse-scale-fade {
+    0% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    50% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2);
+    }
+}

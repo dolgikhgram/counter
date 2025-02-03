@@ -1,0 +1,152 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    width: 100%;
+    position: relative;
+    > * {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.content > span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.content-with-counter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.btn {
+    width: fit-content;
+    min-width: min-content;
+    &:disabled {
+        opacity: 0.66;
+    }
+
+    position: relative;
+    overflow: hidden;
+    outline: none;
+    border:none;
+    border-radius: 12px;
+    &:hover  {
+        opacity: 0.88;
+        cursor: pointer;
+        .content {
+            animation-timing-function: cubic-bezier(0, -0.3, 0.5, 1.3);
+            transition-duration: 500ms;
+            transform: scale(1.05);
+        }
+    }
+    &:focus{
+        outline: 2px solid rgba(0,153,255,1);
+        outline-offset: 2px;
+    }
+}
+
+.btn:active  {
+    animation-timing-function: cubic-bezier(0, -0.3, 0.5, 1.3);
+    transition-duration: 500ms;
+    opacity: 0.8;
+    transform: scale(0.95);
+}
+
+.ripple {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: rippleAnimation 1.9s ease-out;
+    pointer-events: none;
+}
+
+.shimmer {
+    height: 100%;
+    width: calc(100% / 3);
+    background-color: white;
+    opacity: 0.12;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    animation: shimmerAnimation 1.9s infinite;
+}
+
+@keyframes shimmerAnimation {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes rippleAnimation {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(20);
+        opacity: 0;
+    }
+}
+
+.small {
+    padding: 6px 10px;
+    margin: 4px 0;
+    .svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.medium {
+    padding: 8px 12px;
+    margin: 6px 0;
+    .svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.large {
+    padding: 8px 16px;
+    margin: 8px 0;
+    .svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.primary{
+    background-color: #FF7700;
+}
+
+.secondary{
+    background-color: rgba(131, 102, 86, 0.12);
+    opacity: 0.8;
+}
+
+
+
